@@ -1,7 +1,28 @@
 import { useState } from "react";
+import InputEndIcon from "../../components/InputEndIcon";
+import { validatePhoneNumber } from "../../utils";
 
 function SectionOne() {
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [consentChecked, setConsentChecked] = useState(false);
+
+  const handlePhoneNumberChange: React.InputHTMLAttributes<HTMLInputElement>["onChange"] =
+    (e) => {
+      setPhoneNumber(e.target.value);
+    };
+
+  const handleApplyNow: React.DOMAttributes<HTMLFormElement>["onSubmit"] = (
+    e
+  ) => {
+    e.preventDefault();
+  };
+
+  const handleClear = () => {
+    setPhoneNumber("");
+  };
+
+  const isValidPhone = validatePhoneNumber(phoneNumber);
+
   return (
     <section className="relative h-[100vh] w-full flex items-center justify-center">
       <div className="flex flex-col md:flex-row-reverse mx-auto max-w-[1280px] w-full justify-center z-1 bg-transparent">
@@ -53,26 +74,54 @@ function SectionOne() {
           <div className="hidden md:block">
             <div className="flex justify-between items-center block max-w-[94vw]">
               <div className="flex flex-col">
-                <form>
+                <form onSubmit={handleApplyNow}>
                   <div className="flex bg-black p-1 pl-2 rounded-xl justify-between">
                     <div className="flex items-center">
                       <input
                         className="bg-black border-0 outline-none text-white p-1 placeholder-[#7E8587] w-44"
                         placeholder="Enter Phone Number"
                         value={phoneNumber}
-                        onChange={(e) => setPhoneNumber(e.target.value)}
+                        onChange={handlePhoneNumberChange}
+                        maxLength={10}
                       />
-                      <span className="w-6 flex items-center justify-end h-full"></span>
+                      <span className="w-6 flex items-center justify-end h-full">
+                        <InputEndIcon
+                          isValidPhone={isValidPhone}
+                          phoneNumber={phoneNumber}
+                          handleClear={handleClear}
+                        />
+                        {/* {phoneNumber && (
+                          <button type="button" onClick={handleClear}>
+                            <svg
+                              width="4"
+                              height="17"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M2.688 11.664 3.336 0H.048l.648 11.664h1.992Zm-.984 5.328c.96 0 1.68-.72 1.68-1.68s-.72-1.68-1.68-1.68c-.984 0-1.704.72-1.704 1.68s.72 1.68 1.704 1.68Z"
+                                fill="#F48282"></path>
+                            </svg>
+                          </button>
+                        )} */}
+                      </span>
                     </div>
                     <button
                       type="submit"
-                      className="text-center text-sm leading-7 justify-between pt-2 ml-2 bg-uni-yellow rounded-xl z-10 py-2 px-4 disabled:opacity-80 disabled:cursor-not-allowed bg-[#fdef78]">
+                      className="text-center text-sm leading-7 justify-between pt-2 ml-2 bg-uni-yellow rounded-xl z-10 py-2 px-4 disabled:opacity-80 disabled:cursor-not-allowed bg-[#fdef78]"
+                      disabled={
+                        (!isValidPhone && phoneNumber != "") || !consentChecked
+                      }>
                       <span>Apply Now</span>
                     </button>
                   </div>
                 </form>
                 <div className="flex items-center py-4 px-2 max-w-xs gap-2">
-                  <input type="checkbox" id="consent-msg" />
+                  <input
+                    type="checkbox"
+                    checked={consentChecked}
+                    onChange={(e) => setConsentChecked(e.target.checked)}
+                    id="consent-msg"
+                  />
                   <label
                     htmlFor="consent-msg"
                     className="consent text-white md:text-black text-[10px] leading-3 cursor-pointer">
