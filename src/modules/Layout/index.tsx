@@ -6,7 +6,6 @@ import SectionTwo from "../SectionTwo";
 import SectionThree from "../SectionThree";
 
 function Layout() {
-  // TODO: change font
   return (
     <main>
       <header className={"header"}>
