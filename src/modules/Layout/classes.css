@@ -41,3 +41,20 @@
   transform: none;
   visibility: visible;
 }
+
+.phone-input {
+  background: #192231;
+  color: #fdef78;
+  font-weight: 500;
+  width: 100%;
+  outline: none;
+}
+
+.phone-input-container {
+  background: #192231;
+  border: 1px solid #fdef78;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  padding: 1rem;
+  padding-top: 0.8rem;
+}
