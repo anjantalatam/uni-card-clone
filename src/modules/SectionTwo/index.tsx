@@ -56,7 +56,7 @@ function SectionTwo() {
             className="flex w-[96px] md:w-[150px] h-[96px] md:h-[150px] rounded-[50%] justify-center">
             <img
               alt="down_arrow"
-              src="src/assets/images/down_arrow.svg"
+              src="/assets/images/down_arrow.svg"
               loading="lazy"
               className="w-9 md:w-14"
             />

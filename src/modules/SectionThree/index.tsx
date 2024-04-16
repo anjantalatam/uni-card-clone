@@ -27,7 +27,7 @@ function SectionThree() {
               <div className="flex justify-center overflow-hidden">
                 <div className="relative w-[280px] lg:w-[448px]">
                   <img
-                    src="src/assets/images/one_percent_cashback.png"
+                    src="/assets/images/one_percent_cashback.png"
                     className=""
                   />
                 </div>
@@ -53,10 +53,7 @@ function SectionThree() {
             <div className="w-full my-10 md:my-0 lg:pt-0 lg:w-[50%]">
               <div className="flex justify-center overflow-hidden">
                 <div className="relative w-[280px] lg:w-[448px]">
-                  <img
-                    src="src/assets/images/five_x_rewards.png"
-                    className=""
-                  />
+                  <img src="/assets/images/five_x_rewards.png" className="" />
                 </div>
               </div>
             </div>
@@ -80,7 +77,7 @@ function SectionThree() {
             <div className="w-full my-10 md:my-0 lg:pt-0 lg:w-[50%]">
               <div className="flex justify-center overflow-hidden">
                 <div className="relative w-[280px] lg:w-[448px]">
-                  <img src="src/assets/images/forex_globe.png" className="" />
+                  <img src="/assets/images/forex_globe.png" className="" />
                 </div>
               </div>
             </div>

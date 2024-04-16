@@ -12,7 +12,7 @@ function Layout() {
         <nav className="flex items-center justify-between w-full z-15 min-h-[80px] px-4">
           <img
             alt="uni_logo"
-            src="src/assets/images/uni_logo.svg"
+            src="/assets/images/uni_logo.svg"
             loading="lazy"
             className="w-[85px]"
           />

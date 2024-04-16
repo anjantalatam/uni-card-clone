@@ -3,7 +3,7 @@ function SectionOne() {
     <section className="relative h-[100vh] w-full flex items-center justify-center">
       <div className="flex flex-col md:flex-row-reverse mx-auto max-w-[1280px] w-full justify-center z-1 bg-transparent">
         <img
-          src="src/assets/images/hero-img.png"
+          src="/assets/images/hero-img.png"
           alt="uni powered by sbm bank"
           className="h-auto w-[225px] md:w-[420px] md:h-[420px] max-w-[420px] z-[1] mx-6"
         />
@@ -102,7 +102,7 @@ function SectionOne() {
         </div>
       </div>
       <video autoPlay muted loop playsInline className="home__video">
-        <source src="src/assets/videos/home_wave_bg.mp4" type="video/mp4" />
+        <source src="/assets/videos/home_wave_bg.mp4" type="video/mp4" />
       </video>
     </section>
   );
