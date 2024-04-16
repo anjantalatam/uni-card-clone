@@ -8,7 +8,7 @@ function SectionTwo() {
           <FadeInSection>
             <p>
               Earn 1% assured cashback
-              <span className="section-two__text--highlight">
+              <span className="text-highlight-grey">
                 on your spends. Get
               </span>{" "}
               5X
@@ -17,7 +17,7 @@ function SectionTwo() {
           <FadeInSection>
             <p>
               more value than cashback{" "}
-              <span className="section-two__text--highlight">
+              <span className="text-highlight-grey">
                 {" "}
                 at the Uni Store. Enjoy
               </span>
@@ -26,11 +26,11 @@ function SectionTwo() {
 
           <FadeInSection>
             <p>
-              <span className="text-[#9EA7AE] section-two__text--highlight">
+              <span className="text-[#9EA7AE] text-highlight-grey">
                 round the clock{" "}
               </span>
               Whatsapp support.{" "}
-              <span className="text-[#9EA7AE] section-two__text--highlight">
+              <span className="text-[#9EA7AE] text-highlight-grey">
                 And it's
               </span>
             </p>
@@ -39,7 +39,7 @@ function SectionTwo() {
           <FadeInSection>
             <p>
               lifetime free
-              <span className="section-two__text--highlight">
+              <span className="text-highlight-grey">
                 ; no joining fee, no annual charges.
               </span>
             </p>

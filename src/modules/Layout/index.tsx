@@ -3,6 +3,7 @@ import { MoveRight } from "lucide-react";
 
 import SectionOne from "../SectionOne";
 import SectionTwo from "../SectionTwo";
+import SectionThree from "../SectionThree";
 
 function Layout() {
   // TODO: change font
@@ -41,6 +42,8 @@ function Layout() {
 
       <div className="py-12 md:py-[150px]">
         <SectionTwo />
+
+        <SectionThree />
       </div>
 
       <div className="w-full bottom-0 z-40 fixed md:hidden py-8 apply-now">
