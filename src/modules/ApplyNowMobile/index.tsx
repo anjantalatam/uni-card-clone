@@ -44,12 +44,25 @@ function ApplyNowMobile() {
       }
     };
 
+  const getApplyNowDisabled = () => {
+    if (isLoading) return true;
+
+    if (
+      openFormItems &&
+      phoneNumber != "" &&
+      (!isValidPhone || !consentChecked)
+    ) {
+      return true;
+    }
+
+    return false;
+  };
+
   const handleClear = () => {
     setPhoneNumber("");
   };
 
-  const isValidPhone =
-    phoneNumber !== "" ? validatePhoneNumber(phoneNumber) : true;
+  const isValidPhone = validatePhoneNumber(phoneNumber);
 
   return (
     <div className="w-full bottom-0 z-40 fixed md:hidden py-8 apply-now">
@@ -82,10 +95,7 @@ function ApplyNowMobile() {
               type="button"
               onClick={handleApplyNow}
               className="p-4 rounded-lg z-10 flex justify-between items-center bg-[#FDEF78] text-black -mt-2 disabled:bg-[#AEAB8C]"
-              disabled={
-                (openFormItems && (!isValidPhone || !consentChecked)) ||
-                isLoading
-              }>
+              disabled={getApplyNowDisabled()}>
               <span>{isLoading ? "Applying..." : "Apply Now"}</span>
               <MoveRight width="21px" />
             </button>
