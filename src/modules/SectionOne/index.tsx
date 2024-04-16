@@ -1,4 +1,7 @@
+import { useState } from "react";
+
 function SectionOne() {
+  const [phoneNumber, setPhoneNumber] = useState("");
   return (
     <section className="relative h-[100vh] w-full flex items-center justify-center">
       <div className="flex flex-col md:flex-row-reverse mx-auto max-w-[1280px] w-full justify-center z-1 bg-transparent">
@@ -56,7 +59,8 @@ function SectionOne() {
                       <input
                         className="bg-black border-0 outline-none text-white p-1 placeholder-[#7E8587] w-44"
                         placeholder="Enter Phone Number"
-                        value=""
+                        value={phoneNumber}
+                        onChange={(e) => setPhoneNumber(e.target.value)}
                       />
                       <span className="w-6 flex items-center justify-end h-full"></span>
                     </div>
