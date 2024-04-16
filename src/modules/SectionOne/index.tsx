@@ -108,8 +108,7 @@ function SectionOne() {
                         type="submit"
                         className="text-center text-sm leading-7 justify-between pt-2 ml-2 bg-uni-yellow rounded-xl z-10 py-2 px-4 disabled:opacity-80 disabled:cursor-not-allowed bg-[#fdef78]"
                         disabled={
-                          (!isValidPhone && phoneNumber != "") ||
-                          !consentChecked
+                          !(isValidPhone && phoneNumber != "" && consentChecked)
                         }>
                         <span>{isLoading ? "Applying..." : "Apply Now"}</span>
                       </button>
